@@ -7,15 +7,49 @@ export function makeServer({ environment = 'development' } = {}) {
     seeds(server) {
     },
     routes() {
-      this.namespace = '/api/laptop';
+      this.namespace = '/api';
       this.timing = 2000
 
-      this.get('/', (schema, request) => {
+      this.get('/teams', (schema, request) => {
         return [
-          { brand: "Apple", name: "MacBook Air", weigth: 0.5 },
-          { brand: "Asus", name: "P30", weigth: 1.7 },
-          { brand: "Lenovo", name: "A50", weigth: 1.5 },
+          {
+            "name": "Los Angeles Lakers",
+            "stadium": "Staples Center",
+            "franchisePlayers": [
+              { "id": 1, "name": "Lebron James"},
+              { "id": 2, "name": "Anthony Davis"}
+            ]
+          },
+          {
+            "name": "Los Angeles Clippers",
+            "stadium": "Staples Center",
+            "franchisePlayers": [
+              { "id": 3, "name": "Kawhi Leonard"},
+              { "id": 4, "name": "Paul George"}
+            ]
+          },
+          {
+            "name": "Phoenix Suns",
+            "stadium": "Phoenix Suns Arena",
+            "franchisePlayers": [
+              { "id": 5, "name": "Chris Paul"},
+              { "id": 6, "name": "Devin Booker"}
+            ]
+          },
+          {
+            "name": "Brooklyn Nets",
+            "stadium": "Barclays Center",
+            "franchisePlayers": [
+              { "id": 7, "name": "Jamer Harden"},
+              { "id": 8, "name": "Kevin Durant"},
+              { "id": 9, "name": "Kyrie Irving"}
+            ]
+          },
         ]
+      })
+
+      this.post('/vote', (schema, request) => {
+        return { success: true }
       })
     },
   });
