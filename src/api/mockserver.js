@@ -40,7 +40,7 @@ export function makeServer({ environment = 'development' } = {}) {
             "name": "Brooklyn Nets",
             "stadium": "Barclays Center",
             "franchisePlayers": [
-              { "id": 7, "name": "Jamer Harden"},
+              { "id": 7, "name": "James Harden"},
               { "id": 8, "name": "Kevin Durant"},
               { "id": 9, "name": "Kyrie Irving"}
             ]
